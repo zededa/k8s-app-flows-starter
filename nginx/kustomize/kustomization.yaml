@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namePrefix: ""
+
+commonLabels:
+  app.kubernetes.io/name: nginx
+  app.kubernetes.io/instance: nginx
+
+resources:
+  - deployment.yaml
+  - service.yaml
+
+images:
+  - name: nginx
+    newName: nginx
+    newTag: "1.29.3"

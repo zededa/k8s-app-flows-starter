@@ -1,0 +1,6 @@
+apiVersion: v2
+appVersion: 1.25.5
+description: A simple NGINX deployment for testing Kubernetes infrastructure.
+name: nginx
+type: application
+version: 0.2.0

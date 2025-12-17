@@ -1,0 +1,17 @@
+# Source: nginx/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: v1.0
+  labels:
+    app.kubernetes.io/name: nginx
+    app.kubernetes.io/instance: v1.0
+spec:
+  type: NodePort
+  selector:
+    app.kubernetes.io/name: nginx
+    app.kubernetes.io/instance: v1.0
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80

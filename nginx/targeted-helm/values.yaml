@@ -1,0 +1,15 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  # Tag is set to match the appVersion in Chart.yaml for clarity
+  tag: "1.25.5"
+  # tag: "1.29.3" 
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 80
+  # NodePort is optional, but often used for simple cluster access testing
+  nodePort: 30080

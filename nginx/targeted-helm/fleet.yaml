@@ -1,0 +1,20 @@
+namespace: nginx
+targetCustomizations:
+- name: us-east
+  helm:
+    values:
+      image:
+        tag: "1.25.5"
+  # Get example for cluster group target
+  clusterSelector:
+    matchLabels:
+      env: us-east
+
+- name: us-west
+  helm:
+    values:
+      image:
+        tag: "1.29.2"
+  clusterSelector:
+    matchLabels:
+      env: us-west
